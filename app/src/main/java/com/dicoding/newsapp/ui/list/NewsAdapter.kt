@@ -1,8 +1,11 @@
 package com.dicoding.newsapp.ui.list
 
 import android.annotation.SuppressLint
+import android.icu.util.TimeZone
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +15,7 @@ import com.dicoding.newsapp.R
 import com.dicoding.newsapp.data.local.entity.NewsEntity
 import com.dicoding.newsapp.databinding.ItemNewsBinding
 import com.dicoding.newsapp.ui.list.NewsAdapter.MyViewHolder
+import com.dicoding.newsapp.utils.DateFormatter
 
 class NewsAdapter(private val onItemClick: (NewsEntity) -> Unit) : ListAdapter<NewsEntity, MyViewHolder>(
     DIFF_CALLBACK
@@ -30,9 +34,10 @@ class NewsAdapter(private val onItemClick: (NewsEntity) -> Unit) : ListAdapter<N
     class MyViewHolder(private val binding: ItemNewsBinding, val onItemClick: (NewsEntity) -> Unit) : RecyclerView.ViewHolder(
         binding.root
     ) {
+        @RequiresApi(Build.VERSION_CODES.N)
         fun bind(news: NewsEntity) {
             binding.tvItemTitle.text = news.title
-            binding.tvItemPublishedDate.text = news.publishedAt
+            binding.tvItemPublishedDate.text = DateFormatter.formatDate(news.publishedAt, TimeZone.getDefault().id)
             Glide.with(itemView.context)
                 .load(news.urlToImage)
                 .apply(

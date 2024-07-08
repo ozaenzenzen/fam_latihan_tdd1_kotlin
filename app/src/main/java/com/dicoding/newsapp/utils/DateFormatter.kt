@@ -1,11 +1,8 @@
 package com.dicoding.newsapp.utils
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
-import java.util.TimeZone
 
 object DateFormatter {
 
