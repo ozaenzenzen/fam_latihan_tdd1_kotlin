@@ -24,7 +24,7 @@ desugar_jdk_libs = "1.1.5"
 mockitoCore = "5.6.0"
 mockitoInline = "5.2.0"
 coreTesting = "2.2.0"
-kotlinxCoroutinesTest = "1.7.3"
+kotlinxCoroutinesTest = "1.6.4"
 
 
 
