@@ -23,6 +23,7 @@ viewpager2 = "1.0.0"
 desugar_jdk_libs = "1.1.5"
 mockitoCore = "5.6.0"
 mockitoInline = "5.2.0"
+coreTesting = "2.2.0"
 
 
 [libraries]
@@ -49,6 +50,7 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 
 
 [plugins]

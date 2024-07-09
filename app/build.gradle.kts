@@ -75,4 +75,7 @@ dependencies {
     //mockito
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.inline)
+
+    //special testing
+    testImplementation(libs.androidx.core.testing) // InstantTaskExecutorRule
 }
